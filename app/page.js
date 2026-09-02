@@ -1,26 +1,48 @@
 import { InfotecFooter } from "../components/InfotecFooter";
 
-export default function Home() {
-  return (
-    <main className="site-shell">
-      <section className="hero">
-        <div className="hero-glow hero-glow-one" />
-        <div className="hero-glow hero-glow-two" />
-        <div className="container hero-content">
-          <div className="eyebrow">Produto INFOTEC</div>
-          <h1>Trafinexo</h1>
-          <p className="hero-subtitle">Gestão inteligente de tráfego e performance.</p>
-          <p className="hero-copy">
-            Centralize clientes, campanhas, criativos, testes A/B, contratos, metas,
-            alertas e resultados em uma única operação.
-          </p>
-          <div className="hero-status">
-            <span className="status-dot" />
-            Plataforma em preparação
-          </div>
-        </div>
-      </section>
-      <InfotecFooter />
-    </main>
-  );
+const featureGroups = [
+  {icon:"◎",title:"Onboarding e diagnóstico 360°",items:["Briefing guiado do cliente","Leitura da presença digital e redes sociais","Auditoria de site, oferta, reputação e mensuração","Análise de concorrentes e maturidade digital","Pontos fortes, riscos e oportunidades","Plano inicial recomendado para o gestor"]},
+  {icon:"◈",title:"Clientes e carteira",items:["Visão 360° por cliente","Índice de saúde da conta","Metas, histórico e documentos","Status de onboarding e renovação","Rentabilidade e esforço por cliente","Comparação entre clientes e segmentos"]},
+  {icon:"↗",title:"Campanhas e mídia paga",items:["Meta Ads e Google Ads na primeira fase","TikTok, LinkedIn e outros canais na evolução","Investimento, CTR, CPC, CPM, CPL, CPA e ROAS","Comparativos de campanha e período","Projeção de meta e consumo de orçamento","Diário de alterações e impacto das decisões"]},
+  {icon:"A/B",title:"Testes e experimentos",items:["Testes A/B de criativos, públicos, ofertas e páginas","Hipótese, variável, investimento e período","Vencedor e confiança estatística","Biblioteca de aprendizados","Histórico de experimentos por cliente","Sugestões de novos testes pela IA"]},
+  {icon:"✦",title:"Criativos e aprovação",items:["Biblioteca de imagens, vídeos, copies e headlines","Performance histórica por criativo","Detecção de fadiga","Fluxo de aprovação do cliente","Comentários e solicitação de ajustes","Reaproveitamento de padrões vencedores"]},
+  {icon:"▣",title:"Contratos, metas e financeiro",items:["Contratos e escopo por cliente","Alertas de vencimento e renovação","Mensalidade e verba de mídia","Metas de leads, vendas, CPL, CPA e ROAS","Margem e rentabilidade da carteira","Projeções comerciais e operacionais"]},
+  {icon:"AI",title:"IA Analista de Performance",items:["Prioridades do dia","Diagnóstico automático de queda de performance","Alertas de desperdício e risco","Sugestões de otimização","Resumo executivo da carteira","Explicação do que mudou e onde agir"]},
+  {icon:"⚡",title:"Automação e n8n",items:["Eventos de trial, clientes e integrações","Diagnóstico 360° em fila automática","Alertas por e-mail e WhatsApp","Snapshots e relatórios recorrentes","Renovação e follow-up","Fila de sugestões para desenvolvimento assistido por IA"]},
+  {icon:"✓",title:"Portal, equipe e governança",items:["Portal simplificado para o cliente","Perfis e permissões por função","Equipe de agência e distribuição de contas","Auditoria de ações","Histórico de decisões","White label como evolução"]},
+  {icon:"◆",title:"Segurança por padrão",items:["Isolamento por workspace com RLS","Acesso autenticado e menor privilégio","Trilha de auditoria","Segredos fora do navegador","Gate de segurança para melhorias","Mudanças críticas exigem aprovação antes de produção"]}
+];
+
+const steps=[
+  ["01","Cliente entra","Preenche dados, objetivo, verba, canais, histórico, concorrentes e materiais."],
+  ["02","Trafinexo analisa","Organiza dados e prepara o diagnóstico digital, técnico, comercial e de mídia."],
+  ["03","IA prioriza","Entrega ao gestor pontos de atenção, oportunidades, riscos e sugestão de por onde começar."],
+  ["04","Gestor decide","O profissional valida a estratégia, ajusta o plano e inicia a operação com contexto completo."],
+  ["05","Sistema acompanha","Campanhas, metas, testes, contratos, criativos e alertas ficam centralizados e auditáveis."]
+];
+
+function Brand(){return <a className="brand" href="/"><span className="brand-mark">T</span><span><strong>TRAFINEXO</strong><small>by INFOTEC</small></span></a>}
+
+export default function Home(){
+ return <main className="site-shell">
+  <header className="public-header"><div className="container header-inner"><Brand/><nav><a href="#nome">O nome</a><a href="#como-funciona">Como funciona</a><a href="#funcionalidades">Funcionalidades</a><a href="#ia">IA + automação</a><a className="header-login" href="/login">Entrar</a><a className="btn btn-small" href="/cadastro">Teste grátis</a></nav></div></header>
+
+  <section className="hero hero-product"><div className="hero-grid-bg"/><div className="container hero-split"><div className="hero-content"><div className="eyebrow">Produto INFOTEC · 15 dias grátis</div><h1>O centro de comando de quem vive de <span>performance.</span></h1><p className="hero-subtitle">Trafinexo conecta clientes, campanhas, criativos, testes A/B, contratos, metas, resultados e inteligência em uma única operação.</p><p className="hero-copy">Menos abas, menos planilhas e menos decisões no escuro. Abra o Trafinexo e saiba o que está saudável, o que precisa de atenção e qual ação vem primeiro.</p><div className="hero-actions"><a className="btn" href="/cadastro">Começar teste grátis por 15 dias <b>↗</b></a><a className="btn btn-ghost" href="#funcionalidades">Ver tudo que a plataforma faz</a></div><div className="hero-trust"><span>✓ Sem cartão para iniciar</span><span>✓ Dados separados por cliente</span><span>✓ Preparado para Meta e Google</span></div></div>
+  <div className="product-mock"><div className="mock-top"><span/><span/><span/><b>Visão executiva</b></div><div className="mock-body"><aside><strong>T</strong><i>⌂</i><i>◎</i><i>↗</i><i>◈</i><i>AI</i></aside><section><div className="mock-welcome"><div><small>Bom dia, gestor</small><h3>Sua operação em um olhar</h3></div><em>Saúde 87/100</em></div><div className="mock-kpis"><div><small>Clientes ativos</small><b>18</b><span>+2 no mês</span></div><div><small>Verba gerenciada</small><b>R$ 96,5k</b><span>64% consumida</span></div><div><small>ROAS médio</small><b>4,17x</b><span>↗ 8,2%</span></div></div><div className="mock-chart"><div className="bars">{[38,62,51,76,69,88,82,94,78,91].map((h,i)=><i key={i} style={{height:`${h}%`}}/> )}</div></div><div className="mock-alert"><b>AI</b><span><strong>3 contas precisam de atenção</strong><small>Remarketing com CPL +31% · 2 criativos em fadiga · 1 meta em risco</small></span></div></section></div></div></div></section>
+
+  <section className="proof-strip"><div className="container proof-grid"><div><b>1 lugar</b><span>para toda a operação</span></div><div><b>360°</b><span>de diagnóstico do cliente</span></div><div><b>A/B</b><span>com aprendizado histórico</span></div><div><b>IA</b><span>priorizando o que merece ação</span></div></div></section>
+
+  <section className="section workflow-section" id="nome"><div className="container workflow-grid"><div><p className="kicker">A IDEIA DO NOME</p><h2><span>Trafinexo</span> nasce de Tráfego + Nexo.</h2><p>“Tráfego” representa a operação de mídia e performance. “Nexo” representa conexão, contexto e relação entre dados. O nome traduz exatamente o propósito do produto: ligar clientes, anúncios, criativos, contratos, metas, vendas e decisões em um único centro de comando.</p><div className="workflow-pills"><span>Tráfego</span><i>+</i><span>Nexo</span><i>→</i><span>Trafinexo</span></div></div><div className="workflow-card"><b>O que o nome comunica</b><ul><li><span>01</span>Conexão entre plataformas e contas</li><li><span>02</span>Contexto para interpretar métricas</li><li><span>03</span>Ligação entre mídia, vendas e resultado</li><li><span>04</span>Uma visão única da carteira do gestor</li><li><span>05</span>Inteligência acumulada ao longo do tempo</li></ul></div></div></section>
+
+  <section className="section container" id="como-funciona"><div className="section-head"><div><p className="kicker">ONBOARDING INTELIGENTE</p><h2>O cliente entra. O gestor recebe um <span>raio-X da operação.</span></h2></div><p>O Trafinexo foi pensado para reduzir o tempo entre “novo cliente” e “primeira decisão boa”. Antes da reunião de kickoff, o gestor já recebe contexto, riscos e prioridades.</p></div><div className="steps-grid">{steps.map(([n,t,d])=><article key={n}><b>{n}</b><h3>{t}</h3><p>{d}</p></article>)}</div></section>
+
+  <section className="section section-dark" id="ia"><div className="container"><div className="section-head light"><div><p className="kicker">INTELIGÊNCIA APLICADA</p><h2>Não basta mostrar números. O Trafinexo ajuda a entender <span>o que fazer agora.</span></h2></div><p>A IA funciona como analista da operação: cruza sinais, organiza prioridades e prepara recomendações para o gestor humano validar.</p></div><div className="ai-grid"><article className="ai-main"><div className="ai-prompt">O que preciso olhar hoje?</div><div className="ai-answer"><b>Prioridade alta</b><p>A campanha de remarketing do Cliente Bella aumentou o CPL em 34% nos últimos 7 dias enquanto o CTR caiu. A frequência também subiu, indicando provável fadiga de criativo.</p><ul><li>Revisar criativos do conjunto</li><li>Comparar desempenho por frequência</li><li>Preparar novo teste A/B</li></ul></div></article><div className="ai-side"><article><small>PROJEÇÃO</small><b>Meta provável de ser atingida</b><p>218 de 300 leads. Projeção atual: 327.</p></article><article><small>RISCO</small><b>Atendimento pode ser o gargalo</b><p>44% dos leads demoraram mais de 2h para receber contato.</p></article><article><small>OPORTUNIDADE</small><b>Escala com controle</b><p>Campanha principal mantém CPA abaixo da meta e possui margem de orçamento.</p></article></div></div></div></section>
+
+  <section className="section container" id="funcionalidades"><div className="section-head"><div><p className="kicker">PLATAFORMA COMPLETA</p><h2>Da prospecção à renovação. Da campanha ao <span>aprendizado.</span></h2></div><p>O produto nasce para servir gestor freelancer, equipe e agência sem perder a simplicidade de enxergar a carteira inteira.</p></div><div className="feature-grid">{featureGroups.map(g=><article className="feature-card" key={g.title}><div className="feature-icon">{g.icon}</div><h3>{g.title}</h3><ul>{g.items.map(x=><li key={x}>{x}</li>)}</ul></article>)}</div></section>
+
+  <section className="section workflow-section"><div className="container workflow-grid"><div><p className="kicker">MELHORIA CONTÍNUA</p><h2>Quem usa também ajuda a construir o produto.</h2><p>Dentro do dashboard existe uma aba de sugestões. Cada ideia entra em um fluxo rastreável: leitura por IA, classificação, especificação, desenvolvimento assistido, testes e gate de segurança.</p><div className="workflow-pills"><span>Sugestão</span><i>→</i><span>IA analisa</span><i>→</i><span>Desenvolvimento</span><i>→</i><span>Testes</span><i>→</i><span>Segurança</span><i>→</i><span>Produção</span></div><p className="security-note">Mudanças de risco médio ou alto exigem aprovação antes do deploy. Automação com governança, não automação cega.</p></div><div className="workflow-card"><b>Pipeline INFOTEC</b><ul><li><span>01</span>Captura feedback e contexto</li><li><span>02</span>IA classifica impacto, urgência e risco</li><li><span>03</span>Gera especificação técnica e implementação</li><li><span>04</span>Executa validações e segurança</li><li><span>05</span>Registra PR, resultado e histórico</li><li><span>06</span>n8n orquestra notificações e próximos passos</li></ul></div></div></section>
+
+  <section className="section trial-section"><div className="container trial-card"><div><p className="kicker">VALIDAÇÃO PILOTO</p><h2>15 dias para colocar a sua operação dentro do Trafinexo.</h2><p>Comece sem cartão. Cadastre sua carteira, organize os primeiros clientes e ajude a validar a plataforma com uso real.</p></div><div className="trial-actions"><a className="btn" href="/cadastro">Criar minha conta grátis <b>↗</b></a><a href="/login">Já tenho acesso</a></div></div></section>
+  <InfotecFooter/>
+ </main>
 }
