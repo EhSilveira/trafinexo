@@ -1,6 +1,7 @@
 "use client";
 import {useEffect,useState} from "react";
 import {invoke} from "../../../lib/infotecApi";
+import "../../dashboard/pro.css";
 
 export default function IntegrationCallback(){
  const[state,setState]=useState("processing"),[message,setMessage]=useState("Concluindo conexão com segurança…");
