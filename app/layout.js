@@ -1,5 +1,4 @@
 import "./globals.css";
-import "./responsive.css";
 import { InfotecSplash } from "../components/InfotecSplash";
 import PwaInstall from "../components/PwaInstall";
 
@@ -14,21 +13,8 @@ export const metadata = {
   openGraph: {
     title: "Trafinexo | Central de comando da operação de tráfego",
     description: "Conecte suas contas, sincronize mídia, monitore testes, compare receita real e transforme sinais em ações. 15 dias grátis.",
-    type: "website",
-    siteName: "Trafinexo by INFOTEC"
+    type: "website", siteName: "Trafinexo by INFOTEC"
   }
 };
-
 export const viewport = { themeColor: "#071A33", width: "device-width", initialScale: 1, viewportFit: "cover" };
-
-export default function RootLayout({ children }) {
-  return (
-    <html lang="pt-BR">
-      <body>
-        <InfotecSplash />
-        {children}
-        <PwaInstall />
-      </body>
-    </html>
-  );
-}
+export default function RootLayout({ children }) { return <html lang="pt-BR"><body><InfotecSplash/>{children}<PwaInstall/></body></html>; }
