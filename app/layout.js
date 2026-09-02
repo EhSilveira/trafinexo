@@ -4,16 +4,16 @@ import { InfotecSplash } from "../components/InfotecSplash";
 import PwaInstall from "../components/PwaInstall";
 
 export const metadata = {
-  title: "Trafinexo | Gestão inteligente de tráfego e performance",
-  description: "Sistema operacional para gestores de tráfego: clientes, campanhas, criativos, testes A/B, contratos, metas, diagnóstico 360, IA e automações em um só lugar.",
+  title: "Trafinexo | Central de comando para gestores de tráfego",
+  description: "Plataforma operacional para gestores de tráfego e agências: conecte Meta, Google, TikTok, analytics e CRM; monitore campanhas, testes A/B, atribuição, criativos, alertas, metas e relatórios em um só lugar.",
   applicationName: "Trafinexo",
   manifest: "/manifest.webmanifest",
-  keywords: ["gestor de tráfego", "gestão de campanhas", "Meta Ads", "Google Ads", "testes A/B", "performance", "INFOTEC"],
+  keywords: ["gestor de tráfego", "gestão de campanhas", "Meta Ads", "Google Ads", "TikTok Ads", "testes A/B", "atribuição", "performance", "INFOTEC"],
   icons: { icon: "/pwa-192.svg", apple: "/pwa-192.svg" },
   appleWebApp: { capable: true, title: "Trafinexo", statusBarStyle: "black-translucent" },
   openGraph: {
-    title: "Trafinexo | O centro de comando da sua operação de tráfego",
-    description: "Centralize clientes, campanhas, criativos, contratos, metas, resultados e IA. Teste grátis por 15 dias.",
+    title: "Trafinexo | Central de comando da operação de tráfego",
+    description: "Conecte suas contas, sincronize mídia, monitore testes, compare receita real e transforme sinais em ações. 15 dias grátis.",
     type: "website",
     siteName: "Trafinexo by INFOTEC"
   }
