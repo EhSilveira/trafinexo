@@ -11,6 +11,13 @@ Este documento define o fluxo operacional que o n8n deve executar quando o runti
 5. Alterações de código de risco médio/alto passam por testes, gate de segurança e aprovação antes de produção.
 6. Falhas são registradas em `last_error`; eventos esgotados vão para estado equivalente a dead-letter para análise humana.
 
+## Padrão de desenvolvimento da fábrica
+
+- **Claude** é o agente de desenvolvimento principal para implementar as melhorias aprovadas.
+- **Codex** atua como revisor técnico independente, conferindo regressões, segurança, consistência e critérios de aceite.
+- Um segundo gate de revisão/segurança pode ser acionado para mudanças críticas antes do merge.
+- Nenhum agente recebe autorização irrestrita para produção: autenticação, billing, RLS, dados pessoais, infraestrutura, permissões, deleção de dados e integrações sensíveis exigem aprovação humana.
+
 ## Consumidor central da outbox
 
 Cadência sugerida: a cada 1 minuto.
@@ -97,11 +104,12 @@ Fluxo de código recomendado:
 
 1. Criar/atualizar issue no GitHub com contexto e critérios de aceitação.
 2. Criar branch específica.
-3. Agente de desenvolvimento principal implementa a mudança.
-4. Segundo agente/revisor faz revisão independente.
-5. Rodar build, lint, testes unitários/integração e testes específicos do critério de aceite.
-6. Executar gate de segurança.
-7. Abrir PR com evidências e resultados.
+3. Claude implementa a mudança como desenvolvedor principal.
+4. Codex realiza revisão independente e procura regressões, falhas de segurança e inconsistências com o padrão da fábrica.
+5. Quando aplicável, um segundo revisor/gate especializado valida segurança e arquitetura.
+6. Rodar build, lint, testes unitários/integração e testes específicos do critério de aceite.
+7. Executar gate de segurança.
+8. Abrir PR com evidências e resultados.
 
 ### Etapa C — gate de produção
 
