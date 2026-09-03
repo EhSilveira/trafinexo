@@ -18,4 +18,5 @@ jobs:
       - run: node scripts/integration-contracts.mjs
       - run: node scripts/performance-intelligence-contracts.mjs
       - run: node scripts/growth-os-contracts.mjs
+      - run: node scripts/ui-flow-contracts.mjs
       - run: npm run build
