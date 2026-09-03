@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - 'dev/integracoes-e2e-20260902'
+      - 'main'
   pull_request:
     branches: [main]
 jobs:
@@ -16,4 +17,5 @@ jobs:
       - run: npm install --no-audit --no-fund
       - run: node scripts/integration-contracts.mjs
       - run: node scripts/performance-intelligence-contracts.mjs
+      - run: node scripts/growth-os-contracts.mjs
       - run: npm run build
