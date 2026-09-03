@@ -15,4 +15,5 @@ jobs:
           node-version: 22
       - run: npm install --no-audit --no-fund
       - run: node scripts/integration-contracts.mjs
+      - run: node scripts/performance-intelligence-contracts.mjs
       - run: npm run build
