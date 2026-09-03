@@ -1,7 +1,7 @@
 "use client";
 import {useEffect,useState} from "react";
 import OperationsSuite from "../../components/OperationsSuite";
-import InfotecFooter from "../../components/InfotecFooter";
+import {InfotecFooter} from "../../components/InfotecFooter";
 import {clearSession,currentUser,rest} from "../../lib/infotecApi";
 import "../dashboard/pro.css";
 
