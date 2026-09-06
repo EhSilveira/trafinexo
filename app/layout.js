@@ -1,4 +1,5 @@
 import "./globals.css";
+import "./infotec-modern.css";
 import { InfotecSplash } from "../components/InfotecSplash";
 import PwaInstall from "../components/PwaInstall";
 
