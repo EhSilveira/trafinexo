@@ -2,6 +2,7 @@ import "./globals.css";
 import "./infotec-modern.css";
 import { InfotecSplash } from "../components/InfotecSplash";
 import PwaInstall from "../components/PwaInstall";
+import BillingQuickLink from "../components/BillingQuickLink";
 
 export const metadata = {
   title: "Trafinexo | Central de comando para gestores de tráfego",
@@ -18,4 +19,4 @@ export const metadata = {
   }
 };
 export const viewport = { themeColor: "#071A33", width: "device-width", initialScale: 1, viewportFit: "cover" };
-export default function RootLayout({ children }) { return <html lang="pt-BR"><body><InfotecSplash/>{children}<PwaInstall/></body></html>; }
+export default function RootLayout({ children }) { return <html lang="pt-BR"><body><InfotecSplash/>{children}<BillingQuickLink/><PwaInstall/></body></html>; }
