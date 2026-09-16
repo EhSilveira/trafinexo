@@ -3,6 +3,7 @@ import "./infotec-modern.css";
 import "./trafinexo-app.css";
 import "./product-navigation.css";
 import "./responsive.css";
+import "./mobile-browser.css";
 import { InfotecSplash } from "../components/InfotecSplash";
 import PwaInstall from "../components/PwaInstall";
 import BillingQuickLink from "../components/BillingQuickLink";
