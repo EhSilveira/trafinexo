@@ -5,6 +5,7 @@ import CommandCenter from "../../components/CommandCenter";
 import IntegrationsCenter from "../../components/IntegrationsCenter";
 import ExperimentsCenter from "../../components/ExperimentsCenter";
 import ReportsCenter from "../../components/ReportsCenter";
+import AccountEmailCard from "../../components/AccountEmailCard";
 import "./pro.css";
 
 const navGroups=[
@@ -62,7 +63,7 @@ export default function Dashboard(){
 
  return <main className="pro-shell">
   <aside className="pro-sidebar"><a className="pro-brand" href="/"><span>T</span><div><b>TRAFINEXO</b><small>by INFOTEC</small></div></a><div className="workspace-chip"><span>{workspace.name.slice(0,1).toUpperCase()}</span><div><b>{workspace.name}</b><small>{workspace.status==="trial"?`${trialDays} dias de teste`:"Plano completo"}</small></div></div>{navGroups.map(g=><div className="nav-group" key={g.label}><small>{g.label}</small>{g.items.map(item=><button key={item} className={tab===item?"active":""} onClick={()=>setTab(item)}><span>{icons[item]}</span><b>{item}</b>{item==="Central de ação"&&alerts.filter(a=>a.status==="open").length>0&&<em>{alerts.filter(a=>a.status==="open").length}</em>}</button>)}</div>)}<div className="sidebar-foot"><div className="connection-mini"><span className={connectedCount?"online":""}/><div><b>{connectedCount} fonte(s) conectada(s)</b><small>{refreshing?"Sincronizando…":"Dados sob seu controle"}</small></div></div><button onClick={logout}>Sair da conta</button></div></aside>
-  <section className="pro-main"><header className="pro-topbar"><div><span className="breadcrumb">TRAFINEXO / {tab.toUpperCase()}</span><h1>{tab}</h1><p>{navHelp[tab]}</p></div><div className="top-actions"><button className="sync-button" onClick={syncAll} disabled={refreshing}><span>↻</span>{refreshing?"Atualizando…":"Atualizar dados"}</button><div className="pro-user"><span>{(user?.user_metadata?.full_name||user?.email||"U").slice(0,1).toUpperCase()}</span><div><b>{user?.user_metadata?.full_name||"Gestor"}</b><small>{role}</small></div></div></div></header>
+  <section className="pro-main"><AccountEmailCard/><header className="pro-topbar"><div><span className="breadcrumb">TRAFINEXO / {tab.toUpperCase()}</span><h1>{tab}</h1><p>{navHelp[tab]}</p></div><div className="top-actions"><button className="sync-button" onClick={syncAll} disabled={refreshing}><span>↻</span>{refreshing?"Atualizando…":"Atualizar dados"}</button><div className="pro-user"><span>{(user?.user_metadata?.full_name||user?.email||"U").slice(0,1).toUpperCase()}</span><div><b>{user?.user_metadata?.full_name||"Gestor"}</b><small>{role}</small></div></div></div></header>
   {error&&<div className="ops-message error">⚠ {error}</div>}{notice&&<div className="ops-message success" onClick={()=>setNotice("")}>✓ {notice} <small>clique para fechar</small></div>}
   <div className="pro-content">{tab==="Comando"&&<CommandCenter clients={clients} campaigns={campaigns} integrations={integrations} alerts={alerts} recommendations={recommendations} tasks={tasks} outcomes={outcomes} onNavigate={setTab}/>} 
   {tab==="Integrações"&&<IntegrationsCenter workspace={workspace} clients={clients} integrations={integrations} onChanged={()=>load(true)}/>} 
