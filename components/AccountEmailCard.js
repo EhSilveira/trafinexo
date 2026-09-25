@@ -38,7 +38,7 @@ export default function AccountEmailCard(){
  const currentEmail=verifiedEmail||(!guest&&!String(user.email||"").endsWith("@guest.useinfotec.invalid")?String(user.email||""):"");
  if(verified)return null;
  return <section style={{margin:"0 0 18px",padding:16,border:"1px solid #dbe7f1",borderRadius:16,background:"#fff"}}>
-  <b>Conta e e-mail</b><p style={{fontSize:13,color:"#607487"}}>"Seu acesso já está liberado. Confirme o e-mail informado no cadastro para recuperação e ações protegidas."</p>
+  <b>Conta e e-mail</b><p style={{fontSize:13,color:"#607487"}}>Seu acesso já está liberado. Confirme o e-mail informado no cadastro para recuperação e ações protegidas.</p>
   <div style={{display:"flex",gap:8,flexWrap:"wrap"}}><input type="email" value={email} onChange={e=>setEmail(e.target.value)} placeholder={currentEmail||"voce@empresa.com"} style={{flex:"1 1 240px",padding:10}}/><button type="button" onClick={link} disabled={busy||!email.trim()}>{busy?"Enviando...":"Enviar confirmação"}</button></div>
   {message&&<small>{message}</small>}
  </section>
